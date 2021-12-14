@@ -14,12 +14,12 @@ export class CoursesComponent implements OnInit {
   // courses: Course[] = [
   //   {_id:'1', name:'Angular', category:'Front-End'}
   // ];
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns = ['name','category'];
 
   constructor(private coursesService: CoursesService) {
     /*this.courses = [];*/
-    this.courses = this.coursesService.findAll();
+    this.courses$ = this.coursesService.findAll();
   }
 
   ngOnInit(): void {
